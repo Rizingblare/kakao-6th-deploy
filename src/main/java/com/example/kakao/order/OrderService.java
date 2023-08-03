@@ -38,9 +38,7 @@ public class OrderService {
             itemJPARepository.save(item);
         }
 
-        System.out.println("Cart Delete 전 :" + user.getId());
         cartJPARepository.deleteByUserId(user.getId());
-        System.out.println("Cart Delete 후 :" + user.getId());
         return new OrderResponse.SaveDTO(cartList);
     }
 

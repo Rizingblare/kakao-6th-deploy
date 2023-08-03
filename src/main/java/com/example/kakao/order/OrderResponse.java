@@ -62,7 +62,7 @@ public class OrderResponse {
         private int totalPrice;
 
         public FindByIdDTO(List<Item> itemList) {
-            this.id = itemList.get(0).getId();
+            this.id = itemList.get(0).getOrder().getId();
             this.products = itemList.stream()
                     .map(item -> item.getOption().getProduct()).distinct()
                     .map(product -> new ProductDTO(product, itemList))
